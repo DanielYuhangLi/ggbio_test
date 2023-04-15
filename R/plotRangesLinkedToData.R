@@ -95,8 +95,8 @@ setMethod("plotRangesLinkedToData", "GenomicRanges_OR_GRangesList",
             
             p.stat <- p.stat  +  theme.stat +
               theme(panel.grid.minor=element_blank()) +
-              labs(colour = "group")
-            p.stat <- p.stat + stat.coord.trans
+              labs(colour = "group") + geom_hline(yintercept=0, linetype="dotted", color="gray", size=3)
+            p.stat <- p.stat + stat.coord.trans + geom_hline(yintercept=0, linetype="dotted", color="gray", size=3)
             if(!missing(stat.ylab))
               p.stat <- p.stat + ylab(stat.ylab)
             ## link track
