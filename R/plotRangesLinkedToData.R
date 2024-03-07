@@ -95,9 +95,9 @@ setMethod("plotRangesLinkedToData", "GenomicRanges_OR_GRangesList",
             
             p.stat <- p.stat  +  theme.stat +
               theme(panel.grid.minor=element_blank()) +
-              labs(colour = "group") + geom_hline(yintercept=0, linetype="dotted", color="gray", size=3) + 
+              labs(colour = "group") + 
                      ylim(-max(abs(range(as.data.frame(mcols(data)))))-0.1,max(abs(range(as.data.frame(mcols(data)))))+0.1)
-            p.stat <- p.stat + stat.coord.trans + geom_hline(yintercept=0, linetype="dotted", color="gray", size=3) +
+            p.stat <- p.stat + stat.coord.trans +
                      ylim(-max(abs(range(as.data.frame(mcols(data)))))-0.1,max(abs(range(as.data.frame(mcols(data)))))+0.1)
             if(!missing(stat.ylab))
               p.stat <- p.stat + ylab(stat.ylab)
